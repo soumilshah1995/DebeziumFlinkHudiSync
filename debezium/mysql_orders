@@ -1,0 +1,15 @@
+name=mysqlConnector
+connector.class=io.debezium.connector.mysql.MySqlConnector
+tasks.max=1
+database.hostname=mysql
+database.port=3306
+database.user=root
+database.password=debezium
+database.server.name=inventory
+database.history.kafka.bootstrap.servers=fast-data-dev:7092
+database.history.kafka.topic=dbhistory.inventory
+database.whitelist=inventory
+table.include.list=inventory.orders
+value.converter=org.apache.kafka.connect.json.JsonConverter
+value.converter.schemas.enable=false
+decimal.handling.mode=double
